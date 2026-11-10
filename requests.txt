@@ -1,0 +1,281 @@
+1. Executive Hospital Dashboard (Supervisor Agent)
+{
+  "hospital_id": "HOSP001",
+  "user_id": "ADMIN001",
+  "query": "Provide today's executive hospital dashboard with admissions, bed occupancy, ICU status, and financial summary.",
+  "agent": "supervisor",
+  "analytics": {
+    "admissions": true,
+    "bed_management": true,
+    "icu": true,
+    "finance": true
+  },
+  "filters": {
+    "department": "",
+    "ward": "",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "2026-07-06",
+    "discharge_date": "2026-07-06"
+  },
+  "top_k": 5,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "request_source": "Dashboard"
+  }
+}
+2. Admissions Analysis
+{
+  "hospital_id": "HOSP001",
+  "user_id": "ADMISSION_MANAGER",
+  "query": "Analyze today's admissions and predict patient inflow for the next 24 hours.",
+  "agent": "admissions",
+  "analytics": {
+    "admissions": true,
+    "bed_management": false,
+    "icu": false,
+    "finance": false
+  },
+  "filters": {
+    "department": "Emergency",
+    "ward": "",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "2026-07-06",
+    "discharge_date": ""
+  },
+  "top_k": 10,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "priority": "High"
+  }
+}
+3. Bed Management Analysis
+{
+  "hospital_id": "HOSP001",
+  "user_id": "BED_MANAGER",
+  "query": "Show current bed occupancy, available beds, and discharge planning.",
+  "agent": "bed_management",
+  "analytics": {
+    "admissions": false,
+    "bed_management": true,
+    "icu": false,
+    "finance": false
+  },
+  "filters": {
+    "department": "General Medicine",
+    "ward": "Ward-A",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "",
+    "discharge_date": ""
+  },
+  "top_k": 5,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "requested_by": "Bed Control Room"
+  }
+}
+4. ICU Monitoring
+{
+  "hospital_id": "HOSP001",
+  "user_id": "ICU_ADMIN",
+  "query": "Provide ICU utilization, critical patient risk, ventilator usage, and mortality prediction.",
+  "agent": "icu",
+  "analytics": {
+    "admissions": false,
+    "bed_management": false,
+    "icu": true,
+    "finance": false
+  },
+  "filters": {
+    "department": "ICU",
+    "ward": "ICU-A",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "",
+    "discharge_date": ""
+  },
+  "top_k": 10,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "critical_only": true
+  }
+}
+5. Finance Dashboard
+{
+  "hospital_id": "HOSP001",
+  "user_id": "FINANCE_MANAGER",
+  "query": "Generate today's financial performance including revenue, pending insurance claims, and outstanding payments.",
+  "agent": "finance",
+  "analytics": {
+    "admissions": false,
+    "bed_management": false,
+    "icu": false,
+    "finance": true
+  },
+  "filters": {
+    "department": "",
+    "ward": "",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "2026-07-06",
+    "discharge_date": "2026-07-06"
+  },
+  "top_k": 5,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "financial_period": "Daily"
+  }
+}
+6. Department-Specific Dashboard
+{
+  "hospital_id": "HOSP001",
+  "user_id": "DEPT_HEAD",
+  "query": "Provide a complete operational dashboard for the Cardiology department.",
+  "agent": "supervisor",
+  "analytics": {
+    "admissions": true,
+    "bed_management": true,
+    "icu": true,
+    "finance": true
+  },
+  "filters": {
+    "department": "Cardiology",
+    "ward": "",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "",
+    "discharge_date": ""
+  },
+  "top_k": 10,
+  "include_recommendations": true,
+  "include_predictions": false,
+  "metadata": {
+    "dashboard": "Department"
+  }
+}
+7. Physician Performance Dashboard
+{
+  "hospital_id": "HOSP001",
+  "user_id": "MEDICAL_DIRECTOR",
+  "query": "Analyze patient load, admissions, ICU patients, and discharges for Dr. John Smith.",
+  "agent": "supervisor",
+  "analytics": {
+    "admissions": true,
+    "bed_management": true,
+    "icu": true,
+    "finance": false
+  },
+  "filters": {
+    "department": "",
+    "ward": "",
+    "patient_id": "",
+    "physician": "Dr. John Smith",
+    "admission_date": "",
+    "discharge_date": ""
+  },
+  "top_k": 5,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "report": "Physician"
+  }
+}
+8. Single Patient Command Center
+{
+  "hospital_id": "HOSP001",
+  "user_id": "DOCTOR001",
+  "query": "Provide complete operational insights and clinical risk for patient PAT100234.",
+  "agent": "supervisor",
+  "analytics": {
+    "admissions": true,
+    "bed_management": true,
+    "icu": true,
+    "finance": true
+  },
+  "filters": {
+    "department": "",
+    "ward": "",
+    "patient_id": "PAT100234",
+    "physician": "",
+    "admission_date": "",
+    "discharge_date": ""
+  },
+  "top_k": 3,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "patient_view": true
+  }
+}
+9. Emergency Command Center
+{
+  "hospital_id": "HOSP001",
+  "user_id": "ER_MANAGER",
+  "query": "Analyze emergency department workload, available beds, ICU readiness, and expected admissions.",
+  "agent": "supervisor",
+  "analytics": {
+    "admissions": true,
+    "bed_management": true,
+    "icu": true,
+    "finance": false
+  },
+  "filters": {
+    "department": "Emergency",
+    "ward": "",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "2026-07-06",
+    "discharge_date": ""
+  },
+  "top_k": 10,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "emergency_mode": true
+  }
+}
+10. CEO Executive Dashboard
+{
+  "hospital_id": "HOSP001",
+  "user_id": "CEO001",
+  "query": "Generate an executive summary of hospital operations, resource utilization, financial performance, patient flow, and operational risks.",
+  "agent": "supervisor",
+  "analytics": {
+    "admissions": true,
+    "bed_management": true,
+    "icu": true,
+    "finance": true
+  },
+  "filters": {
+    "department": "",
+    "ward": "",
+    "patient_id": "",
+    "physician": "",
+    "admission_date": "",
+    "discharge_date": ""
+  },
+  "top_k": 20,
+  "include_recommendations": true,
+  "include_predictions": true,
+  "metadata": {
+    "executive_report": true,
+    "report_type": "Daily",
+    "generated_by": "Healthcare Command Center AI"
+  }
+}
+Recommended Agent Usage
+Agent	Best Use Case	Analytics Enabled
+supervisor	Executive dashboards, cross-functional hospital operations	Admissions, Bed Management, ICU, Finance
+admissions	Patient inflow, admissions trends, forecasting	Admissions only
+bed_management	Bed occupancy, discharge planning, resource allocation	Bed Management only
+icu	Critical care monitoring, ICU utilization, risk analysis	ICU only
+finance	Revenue, insurance claims, billing, financial KPIs	Finance only
+
+These examples provide realistic payloads for testing your FastAPI endpoints and exercising each specialized agent independently as well as the supervisor's multi-agent orchestration.
