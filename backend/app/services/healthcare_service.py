@@ -26,11 +26,11 @@ from app.implementations.healthcare_impl import (
     HealthcareImplementation,
 )
 
-from app.models.request_model import (
+from app.schemas.request_model import (
     CommandCenterRequest,
 )
 
-from app.models.response_model import (
+from app.schemas.response_model import (
     CommandCenterResponse,
 )
 

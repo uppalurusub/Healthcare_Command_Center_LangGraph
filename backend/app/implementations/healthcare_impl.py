@@ -25,15 +25,15 @@ logger = settings.get_logger()
 
 from app.graph.healthcare_graph import HealthcareGraph
 
-from app.models.request_model import (
+from app.schemas.request_model import (
     CommandCenterRequest,
 )
 
-from app.models.response_model import (
+from app.schemas.response_model import (
     CommandCenterResponse,
 )
 
-from app.models.response_model import (
+from app.schemas.response_model import (
     AdmissionsResponse,
     BedManagementResponse,
     ICUResponse,

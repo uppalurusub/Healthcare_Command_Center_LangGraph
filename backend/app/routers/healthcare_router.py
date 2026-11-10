@@ -27,11 +27,11 @@ from fastapi import status
 from app.config.settings import settings
 logger = settings.get_logger()
 
-from app.models.request_model import (
+from app.schemas.request_model import (
     CommandCenterRequest,
 )
 
-from app.models.response_model import (
+from app.schemas.response_model import (
     CommandCenterResponse,
 )
 
